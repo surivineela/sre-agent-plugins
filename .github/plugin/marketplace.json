@@ -1,0 +1,91 @@
+{
+  "name": "contoso-sre-plugins",
+  "owner": {
+    "name": "SRE Platform Team",
+    "email": "sre-platform@contoso.com"
+  },
+  "metadata": {
+    "description": "Contoso's internal plugin catalog for SRE Agent — org-specific operational knowledge and internal API integrations contributed by specialist teams",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "aks-runbooks",
+      "description": "Contoso-specific AKS troubleshooting runbooks and deployment tracking. Encodes the Kubernetes Platform Team's tribal knowledge: naming conventions, node pool strategy, PDB policies, upgrade cadence, and integrates with the internal deployment tracker to correlate incidents with recent deploys.",
+      "version": "1.0.0",
+      "source": "./aks-runbooks",
+      "author": {
+        "name": "Kubernetes Platform Team",
+        "email": "k8s-platform@contoso.com"
+      },
+      "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/aks-runbooks",
+      "keywords": ["aks", "kubernetes", "runbooks", "deployment", "troubleshooting", "oomkill", "node-pressure"],
+      "category": "operations",
+      "skills": [
+        "aks-incident-triage",
+        "aks-deployment-analysis"
+      ],
+      "mcpServers": {
+        "contoso-deploy-tracker": {
+          "url": "https://deploy-tracker.contoso.internal/api/v1",
+          "headers": {
+            "Authorization": "Bearer ${DEPLOY_TRACKER_TOKEN}",
+            "Content-Type": "application/json"
+          }
+        }
+      }
+    },
+    {
+      "name": "cost-capacity",
+      "description": "Contoso FinOps policies, SKU approval matrix, and cost dashboard integration. Provides real-time team-level spend data, budget burn rates, and enforces Contoso's capacity governance (e.g., D-series VMs require VP approval, scale-out preferred over scale-up).",
+      "version": "1.0.0",
+      "source": "./cost-capacity",
+      "author": {
+        "name": "Cloud FinOps Team",
+        "email": "finops@contoso.com"
+      },
+      "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/cost-capacity",
+      "keywords": ["cost", "finops", "capacity", "sku", "budget", "rightsizing", "chargeback"],
+      "category": "cost-management",
+      "skills": [
+        "cost-analysis",
+        "capacity-planning"
+      ],
+      "mcpServers": {
+        "contoso-cost-dashboard": {
+          "url": "https://cost-dashboard.contoso.internal/api/v1",
+          "headers": {
+            "Authorization": "Bearer ${COST_DASHBOARD_TOKEN}",
+            "Content-Type": "application/json"
+          }
+        }
+      }
+    },
+    {
+      "name": "service-catalog",
+      "description": "Contoso's internal service catalog (CMDB) integration. Maps services to owners, dependencies, and criticality tiers. Enables the agent to look up who owns a service, what depends on it, what SLA tier it's in, and who to escalate to — information that doesn't exist in Azure resource metadata.",
+      "version": "1.0.0",
+      "source": "./service-catalog",
+      "author": {
+        "name": "SRE Leadership",
+        "email": "sre-leadership@contoso.com"
+      },
+      "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/service-catalog",
+      "keywords": ["cmdb", "service-catalog", "ownership", "dependencies", "escalation", "sla"],
+      "category": "governance",
+      "skills": [
+        "service-ownership-lookup",
+        "dependency-impact-analysis"
+      ],
+      "mcpServers": {
+        "contoso-cmdb": {
+          "url": "https://cmdb.contoso.internal/api/v1",
+          "headers": {
+            "Authorization": "Bearer ${CMDB_TOKEN}",
+            "Content-Type": "application/json"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "contoso-deploy-tracker": {
+      "url": "https://deploy-tracker.contoso.internal/api/v1",
+      "headers": {
+        "Authorization": "Bearer ${DEPLOY_TRACKER_TOKEN}",
+        "Content-Type": "application/json"
+      }
+    }
+  }
+}
