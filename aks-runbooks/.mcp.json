@@ -1,10 +1,8 @@
 {
   "mcpServers": {
     "contoso-deploy-tracker": {
-      "url": "http://20.96.81.68/api/v1",
-      "headers": {
-        "Authorization": "Bearer demo-token"
-      }
+      "url": "http://20.96.81.68/mcp/deploy-tracker",
+      "headers": { "Authorization": "Bearer demo-token" }
     }
   }
 }

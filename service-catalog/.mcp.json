@@ -1,10 +1,8 @@
 {
   "mcpServers": {
     "contoso-cmdb": {
-      "url": "http://20.96.81.68/api/v1",
-      "headers": {
-        "Authorization": "Bearer demo-token"
-      }
+      "url": "http://20.96.81.68/mcp/cmdb",
+      "headers": { "Authorization": "Bearer demo-token" }
     }
   }
 }

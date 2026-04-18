@@ -11,76 +11,52 @@
   "plugins": [
     {
       "name": "aks-runbooks",
-      "description": "Contoso-specific AKS troubleshooting runbooks and deployment tracking. Encodes the Kubernetes Platform Team's tribal knowledge: naming conventions, node pool strategy, PDB policies, upgrade cadence, and integrates with the internal deployment tracker to correlate incidents with recent deploys.",
+      "description": "Contoso-specific AKS troubleshooting runbooks and deployment tracking.",
       "version": "1.0.0",
       "source": "./aks-runbooks",
-      "author": {
-        "name": "Kubernetes Platform Team",
-        "email": "k8s-platform@contoso.com"
-      },
+      "author": { "name": "Kubernetes Platform Team", "email": "k8s-platform@contoso.com" },
       "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/aks-runbooks",
-      "keywords": ["aks", "kubernetes", "runbooks", "deployment", "troubleshooting", "oomkill", "node-pressure"],
+      "keywords": ["aks", "kubernetes", "runbooks", "deployment", "troubleshooting"],
       "category": "operations",
-      "skills": [
-        "aks-incident-triage",
-        "aks-deployment-analysis"
-      ],
+      "skills": ["aks-incident-triage", "aks-deployment-analysis"],
       "mcpServers": {
         "contoso-deploy-tracker": {
-          "url": "http://20.96.81.68/api/v1",
-          "headers": {
-            "Authorization": "Bearer demo-token"
-          }
+          "url": "http://20.96.81.68/mcp/deploy-tracker",
+          "headers": { "Authorization": "Bearer demo-token" }
         }
       }
     },
     {
       "name": "cost-capacity",
-      "description": "Contoso FinOps policies, SKU approval matrix, and cost dashboard integration. Provides real-time team-level spend data, budget burn rates, and enforces Contoso's capacity governance (e.g., D-series VMs require VP approval, scale-out preferred over scale-up).",
+      "description": "Contoso FinOps policies, SKU approval matrix, and cost dashboard integration.",
       "version": "1.0.0",
       "source": "./cost-capacity",
-      "author": {
-        "name": "Cloud FinOps Team",
-        "email": "finops@contoso.com"
-      },
+      "author": { "name": "Cloud FinOps Team", "email": "finops@contoso.com" },
       "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/cost-capacity",
-      "keywords": ["cost", "finops", "capacity", "sku", "budget", "rightsizing", "chargeback"],
+      "keywords": ["cost", "finops", "capacity", "sku", "budget"],
       "category": "cost-management",
-      "skills": [
-        "cost-analysis",
-        "capacity-planning"
-      ],
+      "skills": ["cost-analysis", "capacity-planning"],
       "mcpServers": {
         "contoso-cost-dashboard": {
-          "url": "http://20.96.81.68/api/v1",
-          "headers": {
-            "Authorization": "Bearer demo-token"
-          }
+          "url": "http://20.96.81.68/mcp/cost-dashboard",
+          "headers": { "Authorization": "Bearer demo-token" }
         }
       }
     },
     {
       "name": "service-catalog",
-      "description": "Contoso's internal service catalog (CMDB) integration. Maps services to owners, dependencies, and criticality tiers. Enables the agent to look up who owns a service, what depends on it, what SLA tier it's in, and who to escalate to \u2014 information that doesn't exist in Azure resource metadata.",
+      "description": "Contoso's internal service catalog (CMDB) integration.",
       "version": "1.0.0",
       "source": "./service-catalog",
-      "author": {
-        "name": "SRE Leadership",
-        "email": "sre-leadership@contoso.com"
-      },
+      "author": { "name": "SRE Leadership", "email": "sre-leadership@contoso.com" },
       "homepage": "https://github.com/contoso/sre-agent-plugins/tree/main/service-catalog",
-      "keywords": ["cmdb", "service-catalog", "ownership", "dependencies", "escalation", "sla"],
+      "keywords": ["cmdb", "service-catalog", "ownership", "dependencies", "escalation"],
       "category": "governance",
-      "skills": [
-        "service-ownership-lookup",
-        "dependency-impact-analysis"
-      ],
+      "skills": ["service-ownership-lookup", "dependency-impact-analysis"],
       "mcpServers": {
         "contoso-cmdb": {
-          "url": "http://20.96.81.68/api/v1",
-          "headers": {
-            "Authorization": "Bearer demo-token"
-          }
+          "url": "http://20.96.81.68/mcp/cmdb",
+          "headers": { "Authorization": "Bearer demo-token" }
         }
       }
     }
