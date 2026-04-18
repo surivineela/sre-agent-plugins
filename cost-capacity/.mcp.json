@@ -1,9 +1,9 @@
 {
   "mcpServers": {
     "contoso-cost-dashboard": {
-      "url": "https://cost-dashboard.contoso.internal/api/v1",
+      "url": "http://20.96.81.68/api/v1",
       "headers": {
-        "Authorization": "Bearer ${COST_DASHBOARD_TOKEN}"
+        "Authorization": "Bearer demo-token"
       }
     }
   }
