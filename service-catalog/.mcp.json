@@ -3,8 +3,7 @@
     "contoso-cmdb": {
       "url": "https://cmdb.contoso.internal/api/v1",
       "headers": {
-        "Authorization": "Bearer ${CMDB_TOKEN}",
-        "Content-Type": "application/json"
+        "Authorization": "Bearer ${CMDB_TOKEN}"
       }
     }
   }

@@ -5,7 +5,7 @@
     "email": "sre-platform@contoso.com"
   },
   "metadata": {
-    "description": "Contoso's internal plugin catalog for SRE Agent — org-specific operational knowledge and internal API integrations contributed by specialist teams",
+    "description": "Contoso's internal plugin catalog for SRE Agent \u2014 org-specific operational knowledge and internal API integrations contributed by specialist teams",
     "version": "1.0.0"
   },
   "plugins": [
@@ -29,8 +29,7 @@
         "contoso-deploy-tracker": {
           "url": "https://deploy-tracker.contoso.internal/api/v1",
           "headers": {
-            "Authorization": "Bearer ${DEPLOY_TRACKER_TOKEN}",
-            "Content-Type": "application/json"
+            "Authorization": "Bearer ${DEPLOY_TRACKER_TOKEN}"
           }
         }
       }
@@ -55,15 +54,14 @@
         "contoso-cost-dashboard": {
           "url": "https://cost-dashboard.contoso.internal/api/v1",
           "headers": {
-            "Authorization": "Bearer ${COST_DASHBOARD_TOKEN}",
-            "Content-Type": "application/json"
+            "Authorization": "Bearer ${COST_DASHBOARD_TOKEN}"
           }
         }
       }
     },
     {
       "name": "service-catalog",
-      "description": "Contoso's internal service catalog (CMDB) integration. Maps services to owners, dependencies, and criticality tiers. Enables the agent to look up who owns a service, what depends on it, what SLA tier it's in, and who to escalate to — information that doesn't exist in Azure resource metadata.",
+      "description": "Contoso's internal service catalog (CMDB) integration. Maps services to owners, dependencies, and criticality tiers. Enables the agent to look up who owns a service, what depends on it, what SLA tier it's in, and who to escalate to \u2014 information that doesn't exist in Azure resource metadata.",
       "version": "1.0.0",
       "source": "./service-catalog",
       "author": {
@@ -81,8 +79,7 @@
         "contoso-cmdb": {
           "url": "https://cmdb.contoso.internal/api/v1",
           "headers": {
-            "Authorization": "Bearer ${CMDB_TOKEN}",
-            "Content-Type": "application/json"
+            "Authorization": "Bearer ${CMDB_TOKEN}"
           }
         }
       }
